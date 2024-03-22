@@ -16,7 +16,7 @@ Frontend на React для интернет магазина
 
 - Склонировать репозиторий:
   ```bash
-  git clone https://github.com/Daninda/neoflex-test
+  git clone https://github.com/Daninda/neoflex-test.git
   ```
 - Запустить:
 
