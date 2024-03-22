@@ -14,7 +14,6 @@ Frontend на React для интернет магазина
 
 ## Запуск
 
-- Установить **docker**
 - Склонировать репозиторий:
   ```bash
   git clone https://github.com/Daninda/bookmarks.git
@@ -22,7 +21,11 @@ Frontend на React для интернет магазина
 - Запустить:
 
   ```bash
-
+  npm i
   ```
 
-- Сайт доступен на [http://localhost:5000](http://localhost:5000)
+  ```bash
+  npm run dev
+  ```
+
+- Сайт доступен на [http://localhost:5173](http://localhost:5173)
