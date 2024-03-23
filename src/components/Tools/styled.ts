@@ -11,7 +11,7 @@ export const Wrapper = styled.div`
 
 export const IconLink = styled(Link)`
   position: relative;
-  fill: ${theme.color.tertiary};
+  color: ${theme.color.tertiary};
   transition: opacity 100ms;
   height: 100%;
 

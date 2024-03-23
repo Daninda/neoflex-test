@@ -1,14 +1,23 @@
-export interface IProduct {
+export type TProduct = {
+  id: number;
+  category: string;
   img: string;
   title: string;
   price: number;
   discountedPrice?: number;
   rate: number;
-}
+};
 
-export interface IProductGroup {
+export type TBasketItem = {
+  id: number;
+  img: string;
   title: string;
-  products: IProduct[];
-}
+  price: number;
+  discountedPrice?: number;
+  count: number;
+};
 
-export type TData = IProductGroup[];
+export type TProductGroup = {
+  category: string;
+  products: TProduct[];
+};

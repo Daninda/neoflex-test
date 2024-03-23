@@ -1,12 +1,12 @@
 import { FC } from 'react';
 import { paths } from '../../routes/helpers';
-import { IProduct } from '../../types';
+import { TProduct } from '../../types';
 import Button from '../Button';
 import Price from '../Price';
 import Rating from '../Rating';
 import { FlexContainer, Image, ImageWrapper, Info, Title, Wrapper } from './styled';
 
-const Product: FC<IProduct> = ({ img, title, price, discountedPrice, rate }) => {
+const Product: FC<TProduct> = ({ img, title, price, discountedPrice, rate }) => {
   return (
     <Wrapper>
       <ImageWrapper to={paths.details}>

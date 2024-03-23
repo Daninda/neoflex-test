@@ -1,4 +1,6 @@
 import { FC } from 'react';
+import { IoLogoVk } from 'react-icons/io5';
+import { RiTelegramLine, RiWhatsappLine } from 'react-icons/ri';
 import { paths } from '../../routes/helpers';
 import LinkButton from '../LinkButton';
 import SwithLangs from '../SwithLangs';
@@ -20,9 +22,15 @@ const Footer: FC = () => {
         <SwithLangs />
       </FlexContainer>
       <Socials>
-        <LinkButton to='/'>+</LinkButton>
-        <LinkButton to='/'>+</LinkButton>
-        <LinkButton to='/'>+</LinkButton>
+        <LinkButton to='/'>
+          <IoLogoVk size={'3rem'} />
+        </LinkButton>
+        <LinkButton to='/'>
+          <RiTelegramLine size={'3rem'} />
+        </LinkButton>
+        <LinkButton to='/'>
+          <RiWhatsappLine size={'3rem'} />
+        </LinkButton>
       </Socials>
     </Wrapper>
   );

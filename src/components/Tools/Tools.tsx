@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Basket, Like } from '../../icons';
+import { RiHeartLine, RiShoppingCart2Line } from 'react-icons/ri';
 import { paths } from '../../routes/helpers';
 import { IconLink, Indicator, Wrapper } from './styled';
 
@@ -13,11 +13,11 @@ const Tools: FC<Props> = ({ likeCount, basketCount }) => {
     <Wrapper>
       <IconLink to={paths.home}>
         {likeCount ? <Indicator>{likeCount}</Indicator> : null}
-        <Like />
+        <RiHeartLine size={'2.4rem'} />
       </IconLink>
       <IconLink to={paths.basket}>
         {basketCount ? <Indicator>{basketCount}</Indicator> : null}
-        <Basket />
+        <RiShoppingCart2Line size={'2.4rem'} />
       </IconLink>
     </Wrapper>
   );

@@ -7,6 +7,7 @@ type StyledProps = {
 
 export const Wrapper = styled.button<StyledProps>`
   background-color: transparent;
+  height: 3rem;
   border: none;
   cursor: pointer;
   font-size: ${({ $type }) => {

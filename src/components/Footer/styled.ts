@@ -29,5 +29,9 @@ export const Socials = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: start;
-  column-gap: 2rem;
+  column-gap: 1.8rem;
+`;
+
+export const IconWrapper = styled.p`
+  color: ${theme.color.tertiary};
 `;

@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import { Rate } from '../../icons';
-import { Icon, Wrapper } from './styled';
+import { RiStarFill } from 'react-icons/ri';
+import { IconWrapper, Wrapper } from './styled';
 
 type Props = {
   rate: number;
@@ -9,9 +9,9 @@ type Props = {
 const Rating: FC<Props> = ({ rate }) => {
   return (
     <Wrapper>
-      <Icon>
-        <Rate />
-      </Icon>
+      <IconWrapper>
+        <RiStarFill size={'2.4rem'} />
+      </IconWrapper>
       {rate}
     </Wrapper>
   );

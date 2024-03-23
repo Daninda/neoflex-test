@@ -1,16 +1,22 @@
-import { FC } from 'react';
-import testData from '../../testData';
-import { TData } from '../../types';
+import { FC, useMemo } from 'react';
+import { useAppSelector } from '../../hooks';
 import ProductGroup from '../ProductGroup';
+import { divideByGroups } from './helpers';
 
 const ProductsContainer: FC = () => {
-  let productGroups: TData = testData;
+  const products = useAppSelector(state => state.products.list);
+
+  const productGroups = useMemo(() => divideByGroups(products), [products]);
 
   return (
     <>
       {productGroups.map((productGroup, index) => {
         return (
-          <ProductGroup key={index} title={productGroup.title} products={productGroup.products} />
+          <ProductGroup
+            key={index}
+            category={productGroup.category}
+            products={productGroup.products}
+          />
         );
       })}
     </>

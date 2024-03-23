@@ -1,12 +1,12 @@
 import { FC } from 'react';
-import { IProductGroup } from '../../types';
+import { TProductGroup } from '../../types';
 import Product from '../Product';
 import { GroupWrapper, Title, Wrapper } from './styled';
 
-const ProductGroup: FC<IProductGroup> = ({ title, products }) => {
+const ProductGroup: FC<TProductGroup> = ({ category, products }) => {
   return (
     <Wrapper>
-      <Title>{title}</Title>
+      <Title>{category}</Title>
       <GroupWrapper>
         {products.map((product, index) => {
           return <Product key={index} {...product} />;
