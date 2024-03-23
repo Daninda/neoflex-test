@@ -4,6 +4,7 @@ import { theme } from '../../styles';
 
 export const Wrapper = styled.article`
   display: flex;
+  position: relative;
   flex-direction: column;
   justify-content: space-between;
   background-color: ${theme.color.secondary};

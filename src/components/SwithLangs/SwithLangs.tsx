@@ -1,17 +1,29 @@
-import { Lang } from '../../icons';
+import { useState } from 'react';
+import { RiGlobalLine } from 'react-icons/ri';
 import Button from '../Button';
 import { Wrapper } from './styled';
 
+const langs = ['Каз', 'Рус', 'Eng'];
+
 const SwithLangs = () => {
+  const [lang, setLang] = useState('Рус');
+
   return (
     <Wrapper>
-      <Lang />
-      <Button $type='secondary' onClick={() => {}}>
-        Рус
-      </Button>
-      <Button $type='secondary' onClick={() => {}}>
-        Eng
-      </Button>
+      <RiGlobalLine size={'2.4rem'} />
+      {langs.map(value => {
+        return (
+          <Button
+            $isActive={lang === value ? true : false}
+            $type='secondary'
+            onClick={() => {
+              setLang(value);
+            }}
+          >
+            {value}
+          </Button>
+        );
+      })}
     </Wrapper>
   );
 };

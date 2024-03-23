@@ -22,10 +22,10 @@ const Footer: FC = () => {
         <SwithLangs />
       </FlexContainer>
       <Socials>
-        <LinkButton to='/'>
+        <LinkButton target='_blank' to='https://vk.com/daninda'>
           <IoLogoVk size={'3rem'} />
         </LinkButton>
-        <LinkButton to='/'>
+        <LinkButton target='_blank' to='https://t.me/dan1nda'>
           <RiTelegramLine size={'3rem'} />
         </LinkButton>
         <LinkButton to='/'>

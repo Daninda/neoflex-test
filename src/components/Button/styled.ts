@@ -3,6 +3,7 @@ import { theme } from '../../styles';
 
 type StyledProps = {
   $type: 'primary' | 'secondary';
+  $isActive: boolean;
 };
 
 export const Wrapper = styled.button<StyledProps>`
@@ -26,7 +27,10 @@ export const Wrapper = styled.button<StyledProps>`
         return theme.fontWeight.light;
     }
   }};
-  transition: opacity 100ms;
+
+  color: ${({ $isActive }) => ($isActive ? theme.color.accent : theme.color.primary)};
+
+  transition: opacity 100ms, color 100ms;
 
   &:hover {
     opacity: ${theme.opacity.primary};

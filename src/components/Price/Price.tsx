@@ -1,8 +1,8 @@
 import { FC } from 'react';
-import { IProduct } from '../../types';
+import { TProduct } from '../../types';
 import { PriceDiscounted, PriceRegular, PriceRegularIfDiscounted, Wrapper } from './styled';
 
-type Props = Pick<IProduct, 'price' | 'discountedPrice'>;
+type Props = Pick<TProduct, 'price' | 'discountedPrice'>;
 
 const Price: FC<Props> = ({ price, discountedPrice }) => {
   return (

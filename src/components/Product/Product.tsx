@@ -2,15 +2,17 @@ import { FC } from 'react';
 import { paths } from '../../routes/helpers';
 import { TProduct } from '../../types';
 import Button from '../Button';
+import LikeButton from '../LikeButton';
 import Price from '../Price';
 import Rating from '../Rating';
 import { FlexContainer, Image, ImageWrapper, Info, Title, Wrapper } from './styled';
 
-const Product: FC<TProduct> = ({ img, title, price, discountedPrice, rate }) => {
+const Product: FC<TProduct> = ({ id, img, title, price, discountedPrice, rate }) => {
   return (
     <Wrapper>
+      <LikeButton id={id} />
       <ImageWrapper to={paths.details}>
-        <Image src={`../../../public/img/${img}`} />
+        <Image src={`/img/${img}`} />
       </ImageWrapper>
       <Info>
         <FlexContainer>
