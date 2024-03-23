@@ -4,6 +4,8 @@
 
 Frontend на React для интернет магазина
 
+Сделан по макету Figma: https://www.figma.com/file/qw44OPediu3iquaSvkLtqa/Neoflex-Invite-Test-(Copy)-(Copy)?type=design&node-id=0-1&mode=design
+
 ## Инструменты
 
 - Typescript
