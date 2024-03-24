@@ -1,14 +1,13 @@
-import { TBasketItem } from '../../types';
-import { createAppSlice, getIndexFromId } from './helpers';
+import DataService from '../../dataService';
+import { TProduct } from '../../types';
+import { createAppSlice } from './helpers';
 
 type TBasketState = {
-  list: TBasketItem[];
-  isLoading: boolean;
+  list: TProduct[];
 };
 
 const initialState: TBasketState = {
   list: [],
-  isLoading: false,
 };
 
 const basketSlice = createAppSlice({
@@ -16,46 +15,12 @@ const basketSlice = createAppSlice({
   initialState,
   reducers: create => ({
     fetchBasket: create.reducer(state => {
-      const res = localStorage.getItem('basket');
-      res ? (state.list = JSON.parse(res)) : [];
-    }),
-
-    addOneToBasket: create.reducer<TBasketItem>((state, action) => {
-      const itemIndex = getIndexFromId(state.list, action.payload.id);
-
-      if (itemIndex !== null) {
-        state.list[itemIndex].count += 1;
-      } else {
-        state.list.push(action.payload);
-      }
-    }),
-
-    removeOneFromBasket: create.reducer<number>((state, action) => {
-      const itemIndex = getIndexFromId(state.list, action.payload);
-      if (itemIndex !== null) {
-        if (state.list[itemIndex].count > 1) {
-          state.list[itemIndex].count -= 1;
-        } else {
-          state.list = state.list.filter(item => {
-            return item.id !== action.payload;
-          });
-        }
-      }
-
-      localStorage.setItem('basket', JSON.stringify(state.list));
-    }),
-
-    removeAllFromBasket: create.reducer<number>((state, action) => {
-      state.list = state.list.filter(item => {
-        return item.id !== action.payload;
-      });
-
-      localStorage.setItem('basket', JSON.stringify(state.list));
+      const basketIds = DataService.getUserData().basket;
+      state.list = DataService.getProductsByIds(basketIds.map(value => value.id));
     }),
   }),
 });
 
-export const { fetchBasket, addOneToBasket, removeAllFromBasket, removeOneFromBasket } =
-  basketSlice.actions;
+export const { fetchBasket } = basketSlice.actions;
 
 export default basketSlice.reducer;

@@ -3,7 +3,7 @@ import { IoLogoVk } from 'react-icons/io5';
 import { RiTelegramLine, RiWhatsappLine } from 'react-icons/ri';
 import { paths } from '../../routes/helpers';
 import LinkButton from '../LinkButton';
-import SwithLangs from '../SwithLangs';
+import SwitchLangs from '../SwitchLangs';
 import { FlexContainer, Logo, Socials, Wrapper } from './styled';
 
 const Footer: FC = () => {
@@ -19,7 +19,7 @@ const Footer: FC = () => {
       </FlexContainer>
       <FlexContainer>
         <LinkButton to='/'>Условия сервиса</LinkButton>
-        <SwithLangs />
+        <SwitchLangs />
       </FlexContainer>
       <Socials>
         <LinkButton target='_blank' to='https://vk.com/daninda'>

@@ -14,6 +14,7 @@ const SwithLangs = () => {
       {langs.map(value => {
         return (
           <Button
+            key={value}
             $isActive={lang === value ? true : false}
             $type='secondary'
             onClick={() => {

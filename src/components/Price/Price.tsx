@@ -1,22 +1,25 @@
 import { FC } from 'react';
-import { TProduct } from '../../types';
 import { PriceDiscounted, PriceRegular, PriceRegularIfDiscounted, Wrapper } from './styled';
 
-type Props = Pick<TProduct, 'price' | 'discountedPrice'>;
+type Props = {
+  price: number;
+  discountedPrice?: number;
+  $variant?: 'primary' | 'secondary';
+};
 
-const Price: FC<Props> = ({ price, discountedPrice }) => {
+const Price: FC<Props> = ({ price, discountedPrice, $variant = 'primary' }) => {
   return (
-    <Wrapper>
+    <Wrapper $variant={$variant}>
       {discountedPrice ? (
         <>
-          <PriceDiscounted>
+          <PriceDiscounted $variant={$variant}>
             {Math.round(discountedPrice).toLocaleString('ru-RU', {
               style: 'currency',
               currency: 'RUB',
               maximumFractionDigits: 0,
             })}
           </PriceDiscounted>
-          <PriceRegularIfDiscounted>
+          <PriceRegularIfDiscounted $variant={$variant}>
             {Math.round(price).toLocaleString('ru-RU', {
               style: 'currency',
               currency: 'RUB',
@@ -25,7 +28,7 @@ const Price: FC<Props> = ({ price, discountedPrice }) => {
           </PriceRegularIfDiscounted>
         </>
       ) : (
-        <PriceRegular>
+        <PriceRegular $variant={$variant}>
           {Math.round(price).toLocaleString('ru-RU', {
             style: 'currency',
             currency: 'RUB',

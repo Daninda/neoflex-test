@@ -1,13 +1,13 @@
-import { FC } from 'react';
+import { FC, memo } from 'react';
+import BasketTools from '../../features/BasketTools';
+import LikeButton from '../../features/LikeButton';
 import { paths } from '../../routes/helpers';
 import { TProduct } from '../../types';
-import Button from '../Button';
-import LikeButton from '../LikeButton';
 import Price from '../Price';
 import Rating from '../Rating';
 import { FlexContainer, Image, ImageWrapper, Info, Title, Wrapper } from './styled';
 
-const Product: FC<TProduct> = ({ id, img, title, price, discountedPrice, rate }) => {
+const Product: FC<TProduct> = memo(({ id, img, title, price, discountedPrice, rate }) => {
   return (
     <Wrapper>
       <LikeButton id={id} />
@@ -21,13 +21,11 @@ const Product: FC<TProduct> = ({ id, img, title, price, discountedPrice, rate })
         </FlexContainer>
         <FlexContainer>
           <Rating rate={rate} />
-          <Button $type='primary' onClick={() => {}}>
-            Купить
-          </Button>
+          <BasketTools id={id} />
         </FlexContainer>
-      </Info>
+      </Info>{' '}
     </Wrapper>
   );
-};
+});
 
 export default Product;

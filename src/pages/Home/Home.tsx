@@ -1,6 +1,6 @@
 import { FC, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
-import ProductsContainer from '../../components/ProductsContainer';
+import ProductsContainer from '../../features/ProductsContainer';
 import { useAppDispatch } from '../../hooks';
 import { fetchProducts } from '../../store/slices/ProductsSlice';
 

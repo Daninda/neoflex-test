@@ -1,5 +1,7 @@
 import { FC } from 'react';
 import { Helmet } from 'react-helmet-async';
+import BasketContainer from '../../features/BasketContainer';
+import { Title, Wrapper } from './styled';
 
 const Basket: FC = () => {
   return (
@@ -7,7 +9,11 @@ const Basket: FC = () => {
       <Helmet>
         <title>Корзина - QPick</title>
       </Helmet>
-      <div>Basket page</div>
+      <Title>Корзина</Title>
+      <Wrapper>
+        <BasketContainer />
+        <div>Кнопка покупки</div>
+      </Wrapper>
     </>
   );
 };

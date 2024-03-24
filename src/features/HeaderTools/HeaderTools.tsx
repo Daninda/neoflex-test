@@ -1,14 +1,13 @@
 import { FC } from 'react';
 import { RiHeartLine, RiShoppingCart2Line } from 'react-icons/ri';
+import { useAppSelector } from '../../hooks';
 import { paths } from '../../routes/helpers';
 import { IconLink, Indicator, Wrapper } from './styled';
 
-type Props = {
-  likeCount: number;
-  basketCount: number;
-};
+const Tools: FC = () => {
+  const basketCount = useAppSelector(state => state.user.basket.length);
+  const likeCount = useAppSelector(state => state.user.favorites.length);
 
-const Tools: FC<Props> = ({ likeCount, basketCount }) => {
   return (
     <Wrapper>
       <IconLink to={paths.home}>
