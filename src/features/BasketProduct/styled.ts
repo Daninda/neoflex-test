@@ -54,7 +54,7 @@ export const BasketInfo = styled.div`
   padding: 1rem 1.5rem 0;
 `;
 
-export const TotalPrice = styled.p`
+export const TotalPriceWrapper = styled.p`
   display: flex;
   font-size: ${theme.fontSize.extraSmall};
   font-weight: ${theme.fontWeight.normal};

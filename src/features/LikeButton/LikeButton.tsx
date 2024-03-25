@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { RiHeartFill, RiHeartLine } from 'react-icons/ri';
 import { useAppDispatch, useAppSelector } from '../../hooks';
-import { addToFavorites, removeFromFavorites } from '../../store/slices/UserSlice';
+import { addToFavorites, removeFromFavorites } from '../../store/slices/FavoritesSlice';
 import { Wrapper } from './styled';
 
 interface ILikeButtonProps {
@@ -10,7 +10,7 @@ interface ILikeButtonProps {
 
 const LikeButton: FC<ILikeButtonProps> = ({ id }) => {
   const dispatch = useAppDispatch();
-  const isLiked = useAppSelector(state => state.user.favorites.includes(id));
+  const isLiked = useAppSelector(state => state.favorites.list.includes(id));
 
   function handleClick() {
     isLiked ? dispatch(removeFromFavorites(id)) : dispatch(addToFavorites(id));

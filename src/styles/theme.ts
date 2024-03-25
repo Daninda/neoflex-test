@@ -32,6 +32,7 @@ export const theme = {
 
   borderRadius: {
     normal: '3rem',
+    light: '2rem',
     full: '9999rem',
   },
 

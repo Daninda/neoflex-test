@@ -4,13 +4,20 @@ import { Wrapper } from './styled';
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
   $isActive?: boolean;
-  $type?: 'primary' | 'secondary';
+  $disabled?: boolean;
+  $type?: 'primary' | 'secondary' | 'tertiary';
   onClick: () => void;
 }
 
-const Button: FC<Props> = ({ children, onClick, $type = 'primary', $isActive = false }) => {
+const Button: FC<Props> = ({
+  children,
+  onClick,
+  $type = 'primary',
+  $isActive = false,
+  $disabled = false,
+}) => {
   return (
-    <Wrapper $isActive={$isActive} $type={$type} onClick={onClick}>
+    <Wrapper $isActive={$isActive} $type={$type} onClick={!$disabled ? onClick : () => {}}>
       {children}
     </Wrapper>
   );

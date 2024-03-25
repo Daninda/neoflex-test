@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { RiAddFill, RiSubtractFill } from 'react-icons/ri';
 import Button from '../../components/Button';
 import { useAppDispatch, useAppSelector } from '../../hooks';
-import { addOneToBasket, removeOneFromBasket } from '../../store/slices/UserSlice';
+import { addOneToBasket, removeOneFromBasket } from '../../store/slices/BasketSlice';
 import { BasketButton, Count, Wrapper } from './styled';
 
 type Props = {
@@ -10,7 +10,9 @@ type Props = {
 };
 
 const BasketTools: FC<Props> = ({ id }) => {
-  const count = useAppSelector(state => state.user.basket.find(value => value.id === id)?.count);
+  const count = useAppSelector(
+    state => state.basket.countList.find(value => value.id === id)?.count
+  );
   const dispatch = useAppDispatch();
 
   return (

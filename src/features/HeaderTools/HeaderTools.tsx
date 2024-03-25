@@ -1,12 +1,21 @@
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 import { RiHeartLine, RiShoppingCart2Line } from 'react-icons/ri';
-import { useAppSelector } from '../../hooks';
+import { useAppDispatch, useAppSelector } from '../../hooks';
 import { paths } from '../../routes/helpers';
+import { fetchBasketCountList } from '../../store/slices/BasketSlice';
+import { fetchFavorites } from '../../store/slices/FavoritesSlice';
 import { IconLink, Indicator, Wrapper } from './styled';
 
 const Tools: FC = () => {
-  const basketCount = useAppSelector(state => state.user.basket.length);
-  const likeCount = useAppSelector(state => state.user.favorites.length);
+  const basketCount = useAppSelector(state => state.basket.countList.length);
+  const likeCount = useAppSelector(state => state.favorites.list.length);
+
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(fetchFavorites());
+    dispatch(fetchBasketCountList());
+  }, [dispatch]);
 
   return (
     <Wrapper>

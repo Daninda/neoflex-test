@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import { Helmet } from 'react-helmet-async';
 import BasketContainer from '../../features/BasketContainer';
+import Buy from '../../features/Buy';
 import { Title, Wrapper } from './styled';
 
 const Basket: FC = () => {
@@ -12,7 +13,7 @@ const Basket: FC = () => {
       <Title>Корзина</Title>
       <Wrapper>
         <BasketContainer />
-        <div>Кнопка покупки</div>
+        <Buy />
       </Wrapper>
     </>
   );

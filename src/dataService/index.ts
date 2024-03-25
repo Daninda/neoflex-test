@@ -2,16 +2,14 @@ import testData from '../store/testData';
 import { TProduct } from '../types';
 
 class DataService {
-  static getUserData() {
-    const res: { basket: { id: number; count: number }[]; favorites: number[] } = {
-      basket: [],
-      favorites: [],
-    };
+  static getBasket(): { id: number; count: number }[] {
     const basket = localStorage.getItem('basket');
+    return basket ? JSON.parse(basket) : [];
+  }
+
+  static getFavorites(): number[] {
     const favorites = localStorage.getItem('favorites');
-    res.basket = basket ? JSON.parse(basket) : [];
-    res.favorites = favorites ? JSON.parse(favorites) : [];
-    return res;
+    return favorites ? JSON.parse(favorites) : [];
   }
 
   static getProducts(): TProduct[] {
@@ -20,6 +18,14 @@ class DataService {
 
   static getProductsByIds(list: number[]): TProduct[] {
     return testData.filter(item => list.includes(item.id));
+  }
+
+  static setBasket(countList: { id: number; count: number }[]): void {
+    localStorage.setItem('basket', JSON.stringify(countList));
+  }
+
+  static setFavorites(list: number[]): void {
+    localStorage.setItem('favorites', JSON.stringify(list));
   }
 }
 
