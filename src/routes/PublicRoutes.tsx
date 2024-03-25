@@ -4,7 +4,6 @@ import { checkPathMatch, paths } from './helpers';
 
 const HomePage = lazy(() => import('../pages/Home'));
 const Basket = lazy(() => import('../pages/Basket'));
-const Details = lazy(() => import('../pages/Details'));
 
 const PublicRoutes: FC = () => {
   const location = useLocation();
@@ -15,7 +14,6 @@ const PublicRoutes: FC = () => {
     <Routes>
       <Route path={paths.home} element={<HomePage />} />
       <Route path={paths.basket} element={<Basket />} />
-      <Route path={paths.details} element={<Details />} />
 
       <Route path='*' element={!isMatch ? <Navigate to={paths.home} /> : null} />
     </Routes>

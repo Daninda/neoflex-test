@@ -11,6 +11,7 @@ export const Wrapper = styled.button`
   width: fit-content;
   color: ${theme.color.danger};
   transition: opacity 100ms, transform 50ms;
+  z-index: 10;
 
   &:hover {
     opacity: ${theme.opacity.primary};

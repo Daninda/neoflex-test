@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { theme } from '../../styles';
 
@@ -13,7 +12,7 @@ export const Wrapper = styled.article`
   box-shadow: ${theme.shadow.primary};
 `;
 
-export const ImageWrapper = styled(Link)`
+export const ImageWrapper = styled.div`
   cursor: pointer;
   display: flex;
   align-items: center;

@@ -2,13 +2,14 @@ import styled from 'styled-components';
 import { theme } from '../../styles';
 
 export const Title = styled.h1`
+  margin-top: 3rem;
   margin-bottom: 1.5rem;
   font-size: ${theme.fontSize.normal};
   font-weight: ${theme.fontWeight.normal};
 `;
 
 export const Wrapper = styled.div`
-  margin-top: 3rem;
+  margin-top: 2rem;
   margin-bottom: 3rem;
   display: grid;
   grid-template-rows: 100% 100%;

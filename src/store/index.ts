@@ -1,5 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import BasketSlice from './slices/BasketSlice';
+import DetailsSlice from './slices/DetailsSlice';
 import FavoritesSlice from './slices/FavoritesSlice';
 import ProductsSlice from './slices/ProductsSlice';
 
@@ -8,6 +9,7 @@ const store = configureStore({
     products: ProductsSlice,
     basket: BasketSlice,
     favorites: FavoritesSlice,
+    Details: DetailsSlice,
   },
 });
 

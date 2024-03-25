@@ -11,7 +11,7 @@ const Product: FC<TProduct> = memo(({ id, img, title, price, discountedPrice, ra
   return (
     <Wrapper>
       <LikeButton id={id} />
-      <LinkButton to='/'>
+      <LinkButton to={`/`}>
         <ImageWrapper>
           <Image src={`/img/${img}`} />
         </ImageWrapper>

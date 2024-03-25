@@ -1,7 +1,6 @@
 export const pathsPublic = {
   home: '/',
   basket: '/basket',
-  details: '/details/:id',
 };
 
 export const pathsPrivate = {};

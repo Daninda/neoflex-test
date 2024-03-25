@@ -7,6 +7,7 @@ export const Wrapper = styled(Link)`
   font-size: ${theme.fontSize.small};
   font-weight: ${theme.fontWeight.extraLight};
   transition: opacity 100ms;
+  height: 100%;
 
   &:hover {
     opacity: ${theme.opacity.primary};
