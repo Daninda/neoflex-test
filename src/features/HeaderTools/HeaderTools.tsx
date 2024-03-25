@@ -1,9 +1,9 @@
+import { useAppDispatch, useAppSelector } from '@hooks';
+import { paths } from '@routes/helpers';
+import { fetchBasketCountList } from '@store/slices/BasketSlice';
+import { fetchFavorites } from '@store/slices/FavoritesSlice';
 import { FC, useEffect } from 'react';
 import { RiHeartLine, RiShoppingCart2Line } from 'react-icons/ri';
-import { useAppDispatch, useAppSelector } from '../../hooks';
-import { paths } from '../../routes/helpers';
-import { fetchBasketCountList } from '../../store/slices/BasketSlice';
-import { fetchFavorites } from '../../store/slices/FavoritesSlice';
 import { IconLink, Indicator, Wrapper } from './styled';
 
 const Tools: FC = () => {

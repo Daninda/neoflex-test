@@ -1,7 +1,7 @@
+import ProductGroup from '@components/ProductGroup';
+import { useAppDispatch, useAppSelector } from '@hooks';
+import { fetchProducts } from '@store/slices/ProductsSlice';
 import { FC, useEffect, useMemo } from 'react';
-import ProductGroup from '../../components/ProductGroup';
-import { useAppDispatch, useAppSelector } from '../../hooks';
-import { fetchProducts } from '../../store/slices/ProductsSlice';
 import { divideByGroups } from './helpers';
 
 const ProductsContainer: FC = () => {

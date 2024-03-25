@@ -1,7 +1,7 @@
+import { useAppDispatch, useAppSelector } from '@hooks';
+import { addToFavorites, removeFromFavorites } from '@store/slices/FavoritesSlice';
 import { FC } from 'react';
 import { RiHeartFill, RiHeartLine } from 'react-icons/ri';
-import { useAppDispatch, useAppSelector } from '../../hooks';
-import { addToFavorites, removeFromFavorites } from '../../store/slices/FavoritesSlice';
 import { Wrapper } from './styled';
 
 interface ILikeButtonProps {

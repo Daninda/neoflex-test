@@ -1,7 +1,7 @@
+import BasketProduct from '@features/BasketProduct';
+import { useAppDispatch, useAppSelector } from '@hooks';
+import { fetchBasketList } from '@store/slices/BasketSlice';
 import { useEffect } from 'react';
-import { useAppDispatch, useAppSelector } from '../../hooks';
-import { fetchBasketList } from '../../store/slices/BasketSlice';
-import BasketProduct from '../BasketProduct';
 import { Text, Wrapper } from './styled';
 
 const BasketContainer = () => {

@@ -1,10 +1,10 @@
+import Price from '@components/Price';
+import BasketTools from '@features/BasketTools';
+import DeleteButton from '@features/DeleteButton';
+import { useAppSelector } from '@hooks';
+import { paths } from '@routes/helpers';
+import { TProduct } from '@types';
 import { FC } from 'react';
-import Price from '../../components/Price';
-import { useAppSelector } from '../../hooks';
-import { paths } from '../../routes/helpers';
-import { TProduct } from '../../types';
-import BasketTools from '../BasketTools';
-import DeleteButton from '../DeleteButton';
 import {
   BasketInfo,
   FlexContainer,

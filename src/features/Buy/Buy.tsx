@@ -1,5 +1,5 @@
-import Button from '../../components/Button';
-import { useAppSelector } from '../../hooks';
+import Button from '@components/Button';
+import { useAppSelector } from '@hooks';
 import { Block, Text, Total, Wrapper } from './styled';
 
 const Buy = () => {

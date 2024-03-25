@@ -1,6 +1,6 @@
+import Product from '@components/Product';
+import { TProductGroup } from '@types';
 import { FC } from 'react';
-import { TProductGroup } from '../../types';
-import Product from '../Product';
 import { GroupWrapper, Title, Wrapper } from './styled';
 
 const ProductGroup: FC<TProductGroup> = ({ category, products }) => {

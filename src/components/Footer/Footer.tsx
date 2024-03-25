@@ -1,9 +1,9 @@
+import LinkButton from '@components/LinkButton';
+import SwitchLangs from '@components/SwitchLangs';
+import { paths } from '@routes/helpers';
 import { FC } from 'react';
 import { IoLogoVk } from 'react-icons/io5';
 import { RiTelegramLine, RiWhatsappLine } from 'react-icons/ri';
-import { paths } from '../../routes/helpers';
-import LinkButton from '../LinkButton';
-import SwitchLangs from '../SwitchLangs';
 import { FlexContainer, Logo, Socials, Wrapper } from './styled';
 
 const Footer: FC = () => {

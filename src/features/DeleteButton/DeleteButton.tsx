@@ -1,7 +1,7 @@
+import { useAppDispatch } from '@hooks';
+import { removeAllFromBasket } from '@store/slices/BasketSlice';
 import { FC } from 'react';
 import { RiDeleteBin2Line } from 'react-icons/ri';
-import { useAppDispatch } from '../../hooks';
-import { removeAllFromBasket } from '../../store/slices/BasketSlice';
 import { Wrapper } from './styled';
 
 interface IDeleteButtonProps {

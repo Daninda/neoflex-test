@@ -1,6 +1,6 @@
+import ProductsContainer from '@features/ProductsContainer';
 import { FC } from 'react';
 import { Helmet } from 'react-helmet-async';
-import ProductsContainer from '../../features/ProductsContainer';
 
 const Home: FC = () => {
   return (

@@ -1,8 +1,8 @@
+import Button from '@components/Button';
+import { useAppDispatch, useAppSelector } from '@hooks';
+import { addOneToBasket, removeOneFromBasket } from '@store/slices/BasketSlice';
 import { FC } from 'react';
 import { RiAddFill, RiSubtractFill } from 'react-icons/ri';
-import Button from '../../components/Button';
-import { useAppDispatch, useAppSelector } from '../../hooks';
-import { addOneToBasket, removeOneFromBasket } from '../../store/slices/BasketSlice';
 import { BasketButton, Count, Wrapper } from './styled';
 
 type Props = {

@@ -1,6 +1,6 @@
+import Button from '@components/Button';
 import { useState } from 'react';
 import { RiGlobalLine } from 'react-icons/ri';
-import Button from '../Button';
 import { Wrapper } from './styled';
 
 const langs = ['Каз', 'Рус', 'Eng'];

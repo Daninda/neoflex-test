@@ -1,6 +1,6 @@
+import Tools from '@features/HeaderTools';
+import { paths } from '@routes/helpers';
 import { FC } from 'react';
-import Tools from '../../features/HeaderTools';
-import { paths } from '../../routes/helpers';
 import { Logo, Wrapper } from './styled';
 
 const Header: FC = () => {

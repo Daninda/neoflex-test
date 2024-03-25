@@ -1,19 +1,21 @@
+import LinkButton from '@components/LinkButton';
+import Price from '@components/Price';
+import Rating from '@components/Rating';
+import BasketTools from '@features/BasketTools';
+import LikeButton from '@features/LikeButton';
+import { TProduct } from '@types';
 import { FC, memo } from 'react';
-import BasketTools from '../../features/BasketTools';
-import LikeButton from '../../features/LikeButton';
-import { paths } from '../../routes/helpers';
-import { TProduct } from '../../types';
-import Price from '../Price';
-import Rating from '../Rating';
 import { FlexContainer, Image, ImageWrapper, Info, Title, Wrapper } from './styled';
 
 const Product: FC<TProduct> = memo(({ id, img, title, price, discountedPrice, rate }) => {
   return (
     <Wrapper>
       <LikeButton id={id} />
-      <ImageWrapper to={paths.details}>
-        <Image src={`/img/${img}`} />
-      </ImageWrapper>
+      <LinkButton to='/'>
+        <ImageWrapper>
+          <Image src={`/img/${img}`} />
+        </ImageWrapper>
+      </LinkButton>
       <Info>
         <FlexContainer>
           <Title>{title}</Title>
