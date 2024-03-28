@@ -1,4 +1,4 @@
-import Product from '@components/Product';
+import Product from '@features/Product';
 import { TProductGroup } from '@types';
 import { FC } from 'react';
 import { GroupWrapper, Title, Wrapper } from './styled';

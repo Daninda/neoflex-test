@@ -1,23 +1,28 @@
-import LinkButton from '@components/LinkButton';
 import Price from '@components/Price';
 import BasketTools from '@features/BasketTools';
 import DeleteButton from '@features/DeleteButton';
 import TotalProductPrice from '@features/TotalProductPrice';
-import { paths } from '@routes/helpers';
+import { useAppDispatch } from '@hooks';
+import { fetchDetails, setShownDetails } from '@store/slices/DetailsSlice';
 import { TProduct } from '@types';
 import { FC } from 'react';
 import { BasketInfo, FlexContainer, Image, ImageWrapper, Info, Title, Wrapper } from './styled';
 
 const BasketProduct: FC<TProduct> = ({ id, img, price, discountedPrice, title }) => {
+  const dispatch = useAppDispatch();
+
   return (
     <Wrapper>
       <DeleteButton id={id} />
       <FlexContainer>
-        <LinkButton to={paths.basket}>
-          <ImageWrapper>
-            <Image src={`/img/${img}`} />
-          </ImageWrapper>
-        </LinkButton>
+        <ImageWrapper
+          onClick={() => {
+            dispatch(fetchDetails(id));
+            dispatch(setShownDetails(true));
+          }}
+        >
+          <Image src={`/img/${img}`} />
+        </ImageWrapper>
         <Info>
           <Title>{title}</Title>
           <Price {...{ price, discountedPrice }} $variant='secondary' />

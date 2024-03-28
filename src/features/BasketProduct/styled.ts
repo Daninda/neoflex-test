@@ -17,6 +17,12 @@ export const ImageWrapper = styled.div`
   display: flex;
   align-items: center;
   width: 15rem;
+  transition: opacity 100ms;
+  opacity: 1;
+
+  &:hover {
+    opacity: ${theme.opacity.primary};
+  }
 `;
 
 export const Image = styled.img`

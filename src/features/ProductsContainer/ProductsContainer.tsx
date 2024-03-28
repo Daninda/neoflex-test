@@ -1,4 +1,5 @@
 import ProductGroup from '@components/ProductGroup';
+import ProductDetails from '@features/ProductDetails';
 import { useAppDispatch, useAppSelector } from '@hooks';
 import { fetchProducts } from '@store/slices/ProductsSlice';
 import { FC, useEffect, useMemo } from 'react';
@@ -16,6 +17,7 @@ const ProductsContainer: FC = () => {
 
   return (
     <>
+      <ProductDetails />
       {productGroups.map((productGroup, index) => {
         return (
           <ProductGroup

@@ -17,7 +17,12 @@ const Button: FC<Props> = ({
   $disabled = false,
 }) => {
   return (
-    <Wrapper $isActive={$isActive} $type={$type} onClick={!$disabled ? onClick : () => {}}>
+    <Wrapper
+      $disabled={$disabled}
+      $isActive={$isActive}
+      $type={$type}
+      onClick={!$disabled ? onClick : () => {}}
+    >
       {children}
     </Wrapper>
   );

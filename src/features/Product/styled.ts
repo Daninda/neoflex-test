@@ -12,11 +12,18 @@ export const Wrapper = styled.article`
 `;
 
 export const ImageWrapper = styled.div`
+  cursor: pointer;
   padding: 2rem 6rem 4rem;
   display: flex;
   align-items: center;
   height: 100%;
   border-radius: ${theme.borderRadius.normal};
+  transition: opacity 100ms;
+  opacity: 1;
+
+  &:hover {
+    opacity: ${theme.opacity.primary};
+  }
 `;
 
 export const Image = styled.img`

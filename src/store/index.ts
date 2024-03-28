@@ -9,7 +9,7 @@ const store = configureStore({
     products: ProductsSlice,
     basket: BasketSlice,
     favorites: FavoritesSlice,
-    Details: DetailsSlice,
+    details: DetailsSlice,
   },
 });
 

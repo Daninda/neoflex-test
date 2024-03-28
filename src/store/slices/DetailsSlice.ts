@@ -4,10 +4,12 @@ import { createAppSlice } from './helpers';
 
 type TDetailsState = {
   product?: TProduct;
+  isShown: boolean;
 };
 
 const initialState: TDetailsState = {
   product: undefined,
+  isShown: false,
 };
 
 const detailsSlice = createAppSlice({
@@ -17,9 +19,13 @@ const detailsSlice = createAppSlice({
     fetchDetails: create.reducer<number>((state, action) => {
       state.product = DataService.getProduct(action.payload);
     }),
+
+    setShownDetails: create.reducer<boolean>((state, aciton) => {
+      state.isShown = aciton.payload;
+    }),
   }),
 });
 
-export const { fetchDetails } = detailsSlice.actions;
+export const { fetchDetails, setShownDetails } = detailsSlice.actions;
 
 export default detailsSlice.reducer;

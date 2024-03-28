@@ -1,4 +1,5 @@
 import BasketProduct from '@features/BasketProduct';
+import ProductDetails from '@features/ProductDetails';
 import { useAppDispatch, useAppSelector } from '@hooks';
 import { fetchBasketList } from '@store/slices/BasketSlice';
 import { useEffect } from 'react';
@@ -14,15 +15,19 @@ const BasketContainer = () => {
   }, [dispatch, basketLength]);
 
   return (
-    <Wrapper>
-      {!basketLength ? (
-        <Text>Корзина пуста</Text>
-      ) : (
-        basketItems.map(item => {
-          return <BasketProduct key={item.id} {...item} />;
-        })
-      )}
-    </Wrapper>
+    <>
+      <ProductDetails />
+
+      <Wrapper>
+        {!basketLength ? (
+          <Text>Корзина пуста</Text>
+        ) : (
+          basketItems.map(item => {
+            return <BasketProduct key={item.id} {...item} />;
+          })
+        )}
+      </Wrapper>
+    </>
   );
 };
 

@@ -4,6 +4,7 @@ import { theme } from '../../styles';
 type StyledProps = {
   $type: 'primary' | 'secondary' | 'tertiary';
   $isActive: boolean;
+  $disabled: boolean;
 };
 
 export const Wrapper = styled.button<StyledProps>`
@@ -35,7 +36,7 @@ export const Wrapper = styled.button<StyledProps>`
     }
   }};
   border: none;
-  cursor: pointer;
+  cursor: ${({ $disabled }) => ($disabled ? 'not-allowed' : 'pointer')};
   font-size: ${({ $type }) => {
     switch ($type) {
       case 'primary':
